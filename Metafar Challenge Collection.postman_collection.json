@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "4c410cc6-3556-412d-81a4-c07530c47088",
+		"name": "Metafar Challenge Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13925276"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cardNumber\": 12345678,\r\n    \"pin\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{metafarServerUrl}}authentication/login",
+					"host": [
+						"{{metafarServerUrl}}authentication"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Balance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{metafarServerUrl}}account/12345678/balance",
+					"host": [
+						"{{metafarServerUrl}}account"
+					],
+					"path": [
+						"12345678",
+						"balance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Operations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{metafarServerUrl}}account/12345678/operations",
+					"host": [
+						"{{metafarServerUrl}}account"
+					],
+					"path": [
+						"12345678",
+						"operations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Withdraw",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{metafarServerUrl}}account/12345678/withdraw/95000",
+					"host": [
+						"{{metafarServerUrl}}account"
+					],
+					"path": [
+						"12345678",
+						"withdraw",
+						"95000"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{bearerToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "metafarServerUrl",
+			"value": "https://localhost:7166/api/"
+		},
+		{
+			"key": "bearerToken",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKdWxpYW4gU29zYSIsImp0aSI6ImZlYTEyOWNhLThhYzItNDhmNC04N2RkLTY5MmJjOWJhMDJhMCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiSnVsaWFuIFNvc2EiLCJDdXN0b21lcklkIjoiMSIsImV4cCI6MTY5NDIxMTY0OCwiaXNzIjoiTWV0YWZhci5TZWN1cml0eS5CZWFyZXIiLCJhdWQiOiJNZXRhZmFyLlNlY3VyaXR5LkJlYXJlciJ9.IKU4xPSaKx5r4n3Qe89NzP6aBnN25ps8Xw9HkXd2OBk"
+		}
+	]
+}
