@@ -1,5 +1,9 @@
 # metafar-challenge
-## Bank Account API
+## ATM API
+
+### Entity Relationship Diagram
+![image](https://github.com/julifacha/metafar-challenge/assets/41644643/dc633b1f-d59d-4a78-b557-27a4ada330c9)
+
 
 ### Valid Card Number / Pin Combinations:
 
